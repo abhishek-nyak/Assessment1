@@ -27,7 +27,7 @@ Contributions to this project are welcome. If you have any suggestions, bug repo
 
 ## License
 
-This project is licensed under the GNU General Public License (GPL) version 3. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the GNU General Public License (GPL) version 3. See the [LCENSE](LICENSE) file for more details.
 
 ## Contact
 
