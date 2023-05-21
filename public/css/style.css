@@ -1,0 +1,17 @@
+/* public/css/style.css */
+
+.login-link {
+    margin-top: 20px;
+  }
+  
+  .login-link a {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .login-link a:hover {
+    background-color: #0056b3;
+  }
+  
