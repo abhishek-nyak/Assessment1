@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laundry Management System - Dashboard</title>
+  <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="dashboard-title">Dashboard</h1>
+
+    <!-- Menu Button -->
+    <div class="menu-button">
+      <div class="menu-bar"></div>
+      <div class="menu-bar"></div>
+      <div class="menu-bar"></div>
+    </div>
+
+    <!-- Dashboard Menu -->
+    <div class="dashboard-menu">
+      <div class="dashboard-menu-item"><a href='/laundry_request'>Laundry Requests</a></div>
+      <div class="dashboard-menu-item"><a href='/request_status'>Request Status</a></div>
+      <div class="dashboard-menu-item"><a href='/reset_p'>Account Setting</a></div>
+    </div>
+    <!-- Wecoming the username -->
+    <div class="username-order">
+        <h1>Welcome <%= username %>!</h1>
+    <!-- Dashboard Content -->
+    <div class="dashboard-content">
+      <!-- New Request -->
+      <div class="dashboard-card">
+        <h2 class="dashboard-card-title"><%= orderData.newRequest%> New Request</h2>
+        <p class="dashboard-card-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium sem non elementum auctor.</p>
+      </div>
+
+      <!-- Accepted -->
+      <div class="dashboard-card">
+        <h2 class="dashboard-card-title"><%= orderData.accepted%> Accepted</h2>
+        <p class="dashboard-card-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium sem non elementum auctor.</p>
+      </div>
+
+      <!-- In Process -->
+      <div class="dashboard-card">
+        <h2 class="dashboard-card-title"><%= orderData.inProcess%> In Process</h2>
+        <p class="dashboard-card-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium sem non elementum auctor.</p>
+      </div>
+
+      <!-- Finish -->
+      <div class="dashboard-card">
+        <h2 class="dashboard-card-title"><%=orderData.finished %> Finished</h2>
+        <p class="dashboard-card-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium sem non elementum auctor.</p>
+      </div>
+    </div>
+  </div>
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>
