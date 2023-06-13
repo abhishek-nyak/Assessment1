@@ -1,3 +1,5 @@
+<!-- change-name.ejs -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,35 +7,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account Setting</title>
+    <link rel="stylesheet" href="/css/account-setting.css">
 </head>
 <body>
-    <body>
-        <div class="navigation">
-          <ul>
-            <li><a href="/">Go Home</a></li>
-            <li><a href="/change-password">Change Password</a></li>
-            <li><a href="/change-name">Change Name</a></li>
-            <li><a href="/delete-account">Delete Account</a></li>
-          </ul>
-        </div>
+    <div class="navigation">
+        <ul>
+            <li><a href="/dashboard">↩ Dashboard</a></li>
+            <li><a href="/accountSetting">Change Password</a></li>
+            <li><a href="/accountSetting/change-name" class="active-nav">Change Name</a></li>
+            <li><a href="/accountSetting/delete-account">Delete Account</a></li>
+        </ul>
+    </div>
 
-
-        <div class="content">
-            <!-- Change Name form -->
+    <div class="content">
+        <!-- Change Name form -->
+        <div class="form-container">
             <h1>Change Name</h1>
             <form action="/change-name" method="POST">
-              <div>
-                <label for="newName">New Name</label>
-                <input type="text" id="newName" name="newName" required>
-              </div>
-              <div>
-                <button type="submit">Change</button>
-              </div>
+                <div>
+                    <label for="newName">New Name</label>
+                    <input type="text" id="newName" name="newName" required>
+                </div>
+                <div>
+                    <button type="submit">Change</button>
+                </div>
             </form>
-          </div>
-        
-      </body>
+        </div>
+    </div>
 </body>
 </html>
-
-

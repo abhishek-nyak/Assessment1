@@ -30,6 +30,7 @@ const loginRouter = require('./routes/login');
 const signupRouter = require('./routes/signup');
 const resetPasswordRouter = require('./routes/resetPassword');
 const requestRoutes = require('./routes/requestRoutes');
+const accountSettingRoutes =require('./routes/accountSetting');
 
 // controllers
 const loginController = require('./controllers/loginController');
@@ -40,6 +41,7 @@ const passwordController = require('./controllers/passwordController');
 // Routes
 app.use(loginController);
 app.use(dashboardController);
+app.use(accountSettingRoutes);
 
 app.get('/reset-password', passwordController.renderResetPasswordForm);
 app.post('/reset-password', passwordController.resetPassword);
@@ -50,6 +52,7 @@ app.use('/', homeRouter);
 app.use('/login', loginRouter);
 app.use('/signup', signupRouter);
 app.use('/resetPassword', resetPasswordRouter);
+app.use('/accountSetting', accountSettingRoutes);
 app.use(requestRoutes);
 //logging out
 app.get('/logout', (req, res) => {

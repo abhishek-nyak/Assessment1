@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Delete Account</title>
+  <link rel="stylesheet" href="/css/account-setting.css">
+</head>
+<body>
+  <div class="navigation">
+    <!-- Navigation bar content -->
+    <ul>
+      <li><a href="/dashboard">↩ Dashboard</a></li>
+      <li><a href="/accountSetting">Change Password</a></li>
+      <li><a href="/accountSetting/change-name">Change Name</a></li>
+      <li><a href="/accountSetting/delete-account" class="active-nav">Delete Account</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <!-- Delete Account form -->
+    <h1>Delete Account</h1>
+    <form action="/delete-account" method="POST">
+      <div>
+        <label>
+          <input type="checkbox" name="aware" required>
+          I am aware that I won't get my account back
+        </label>
+      </div>
+      <div>
+        <label>
+          <input type="checkbox" name="confirm" required>
+          I confirm to delete everything about me
+        </label>
+      </div>
+      <div>
+        <button type="submit">Delete</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
