@@ -20,6 +20,7 @@ app.use(session({
   secret: 'secret-key-123',
   resave: false,
   saveUninitialized: false
+
 }));
 
 
@@ -27,21 +28,38 @@ app.use(session({
 const homeRouter = require('./routes/home');
 const loginRouter = require('./routes/login');
 const signupRouter = require('./routes/signup');
+const resetPasswordRouter = require('./routes/resetPassword');
+const requestRoutes = require('./routes/requestRoutes');
 
 // controllers
 const loginController = require('./controllers/loginController');
 const dashboardController = require('./controllers/dashboardController');
 
+const passwordController = require('./controllers/passwordController');
+
 // Routes
 app.use(loginController);
 app.use(dashboardController);
+
+app.get('/reset-password', passwordController.renderResetPasswordForm);
+app.post('/reset-password', passwordController.resetPassword);
 
 
 // direct routes
 app.use('/', homeRouter);
 app.use('/login', loginRouter);
 app.use('/signup', signupRouter);
-//app.use('/dashboard', dashboardRouter);
+app.use('/resetPassword', resetPasswordRouter);
+app.use(requestRoutes);
+//logging out
+app.get('/logout', (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.error('Error destroying session:', err);
+    }
+    res.render('login',{success:"Logged out successfully"}); 
+  });
+});
 
 
 

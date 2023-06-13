@@ -19,13 +19,20 @@
 
     <!-- Dashboard Menu -->
     <div class="dashboard-menu">
-      <div class="dashboard-menu-item"><a href='/laundry_request'>Laundry Requests</a></div>
+      <div class="dashboard-menu-item"><a href='/laundryRequest'>Laundry Requests</a></div>
       <div class="dashboard-menu-item"><a href='/request_status'>Request Status</a></div>
       <div class="dashboard-menu-item"><a href='/reset_p'>Account Setting</a></div>
+      <div class="dashboard-menu-item"><a href='/logout'>Logout</a></div>
     </div>
+
+    <% if (typeof message !== 'undefined') { %>
+    <% } %>
+
+
+
     <!-- Wecoming the username -->
     <div class="username-order">
-        <h1>Welcome <%= username %>!</h1>
+        <h1>Welcome <%= fName %>!</h1>
     <!-- Dashboard Content -->
     <div class="dashboard-content">
       <!-- New Request -->
@@ -54,5 +61,13 @@
     </div>
   </div>
   <script src="/js/dashboard.js"></script>
+
+
+<div class="bottom-paragraph">
+  <p>
+    We are a highly acclaimed online laundry service provider committed to delivering exceptional service and making your life easier. With a focus on quality, reliability, and customer satisfaction, our experienced team ensures that your garments receive the utmost care and attention. Our convenient online platform allows you to schedule pickups and deliveries at your preferred time and location, bringing convenience right to your doorstep. With tailored services, efficient processes, and dedicated customer support, we strive to exceed your expectations and provide a seamless laundry care experience. Trust us to handle your laundry needs and let us make a difference in your daily life.
+  </p>
+</div>
+
 </body>
 </html>

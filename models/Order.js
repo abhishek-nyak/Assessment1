@@ -17,7 +17,7 @@ class Order {
   }
   static getOrders(username) {
     return new Promise((resolve, reject) => {
-      const query = 'SELECT no_of_order as numOrder, description, new_request as newRequest, accepted, in_process as inProcess, finished FROM orders WHERE username = ?';
+      const query = 'SELECT no_of_order as numOrder, description, new_request as newRequest, accepted, in_process as inProcess, finished FROM orders WHERE email_id = ?';
       db.query(query, [username], (error, results) => {
         if (error) {
           reject(error);

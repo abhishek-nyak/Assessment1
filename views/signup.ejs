@@ -2,32 +2,48 @@
 <html>
 <head>
   <title>Signup</title>
-  
+
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 </head>
 <body>
   <h1>Signup</h1>
-  <% if (typeof error !== 'undefined') { %>
+  <div class="top-message">
+    <% if (typeof error !== 'undefined') { %>
     <p class="error"><%= error %></p>
   <% } %>
+  </div>
+  
   <form action="/signup" method="POST">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required><br>
+    <label for="name">Full name:</label>
+    <input type="text" id="name" name="name" required><br>
+    <label for="username">Username(Your Email ID):</label>
+    <input type="email" id="email" name="email" required><br>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required><br>
+    <div class="password-field"> 
+      <label for="password">Password:</label>
+      <div class="input-wrapper">
+        <input type="password" id="password" name="password" required>
+        <span id="togglePassword" class="eye-icon">
+          <i class="fas fa-eye"></i>
+        </span>
+      </div>
+    </div>
 
     <label for="confirmPassword">Confirm Password:</label>
     <input type="password" id="confirmPassword" name="confirmPassword" required><br>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required><br>
-
     <label for="phoneNumber">Phone Number:</label>
-    <input type="tel" id="phoneNumber" name="phoneNumber" required><br>
+    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="10 Digit Phone number" pattern="[6-9]{1}[0-9]{9}" required required title="Please enter a valid 10-digit phone number starting with a digit from 6 to 9."><br>
 
     <button type="submit">Signup</button>
   </form>
-  <p>Existing user? <a href="/login">Login here</a></p>
+  <div class="bottom-message">
+    <p>Existing user? <a href="/login">Login here</a></p>
+  </div>
+  
+  <script src="/js/validatePassword.js"></script>
+  <script src="/js/script.js"></script>
 </body>
 </html>

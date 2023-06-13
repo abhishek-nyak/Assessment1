@@ -14,32 +14,39 @@ router.post('/', (req, res) => {
   const { username, password } = req.body;
 
   User.findByUsername(username)
-    .then((user) => {
-      if (user) {
-        // user found, compare passwords
-        if (User.comparePasswords(password, user.password)) {
-          // Passwords match
+  .then((user) => {
+    if (user) {
+      // user found, compare passwords
+      User.comparePasswords(password, user.password)
+        .then((passwordsMatch) => {
+          if (passwordsMatch) {
+            // Passwords match
+            console.log('this happen?', password);
+            //session
+            req.session.loggedIn = true;
+            req.session.email_id = username;
 
-          //session
-          req.session.loggedIn = true;
-          req.session.username = username;
-
-
-          res.redirect('/dashboard');
-        } else {
-          // if passwords do not match
-          res.render('login', { error: 'Invalid username or password' });
-        }
-      } else {
-        // rende if user not found
-        res.render('login', { error: 'Invalid username or password' });
-      }
-    })
-    .catch((error) => {
-      // Handling errors
-      console.log(error);
-      res.render('login', { error: 'An error occurred' });
-    });
+            res.redirect('/dashboard');
+          } else {
+            // if passwords do not match
+            res.render('login', { error: 'Invalid username or password' });
+          }
+        })
+        .catch((error) => {
+          // handle bcrypt.compare error
+          console.error('Error comparing passwords:', error);
+          res.render('login', { error: 'An error occurred' });
+        });
+    } else {
+      // render if user not found
+      res.render('login', { error: 'Invalid username or password' });
+    }
+  })
+  .catch((error) => {
+    // handle User.findByUsername error
+    console.error('Error finding user:', error);
+    res.render('login', { error: 'An error occurred' });
+  });
 });
 
 module.exports = router;

@@ -5,26 +5,46 @@
 <head>
   <title>Login</title>
   <link rel="stylesheet" href="/css/style.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 
 </head>
 <body>
   <h1>Login</h1>
+ <div class="top-message">
   <% if (typeof success !== 'undefined') { %>
     <p class="success"><%= success %></p>
   <% } %>
   <% if (typeof error !== 'undefined') { %>
     <p class="error"><%= error %></p>
   <% } %>
+ </div> 
 
   <form action="/" method="POST">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required><br>
-
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required><br>
-
+    
+    <div class="password-field">
+      <label for="username">Username(Your Email ID):</label>
+      <input type="text" id="username" name="username" required><br>
+      <label for="password">Password:</label>
+      <div class="input-wrapper">
+        <input type="password" id="password" name="password" required>
+        <span id="togglePassword" class="eye-icon">
+          <i class="fas fa-eye"></i>
+        </span>
+      </div>
+    </div>
+        
     <button type="submit">Login</button>
   </form>
-  <p>Don't have an account? <a href="/signup">Signup here</a></p> <!-- Link for signing up -->
+  <div class="bottom-message">
+    <p>Don't have an account?  
+      <a href="/signup"> Signup here</a>
+    </p>
+    <p>Forgot Password? 
+      <a href="/resetPassword"> Reset here</a>
+    </p>
+  </div>
+  <script src="/js/script.js"></script>
+  
 </body>
 </html>

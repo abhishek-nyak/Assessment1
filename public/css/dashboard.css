@@ -4,6 +4,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: rgb(223, 250, 250);
   }
   
   .container {
@@ -20,14 +21,16 @@ body {
   }
   
   .menu-button {
+    background-color:inherit;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
     width: 30px;
-    height: 25px;
+    height: 30px;
     margin-bottom: 10px;
     cursor: pointer;
+    
   }
   
   .menu-bar {
@@ -39,16 +42,17 @@ body {
   }
   
   .menu-button.open .menu-bar:nth-child(1) {
-    transform: rotate(90deg); /* Rotate first line  */
+    transform: rotate(45deg) translate(5px, 5px); /* Rotate and translate first line */
   }
   
   .menu-button.open .menu-bar:nth-child(2) {
-    transform: scaleX(0); /* second line */
+    transform: scaleX(0); /* Hide second line */
   }
   
   .menu-button.open .menu-bar:nth-child(3) {
-    transform: rotate(-90deg); /* Rotate third line */
+    transform: rotate(-45deg) translate(5px, -5px); /* Rotate and translate third line */
   }
+  
   
   .dashboard-menu {
     display: none;
@@ -57,14 +61,21 @@ body {
   }
   .dashboard-menu.show {
     display: flex; /* Show the menu when  */
+    align-items: center;
+    justify-content: space-evenly;
   }
   
   .dashboard-menu-item {
     padding: 10px 20px;
-    background-color: #acaaaa;
+    background-color: #0c0c0c;
+
     border-radius: 4px;
     cursor: pointer;
-    
+    color: white;
+  }
+  .dashboard-menu-item:hover {
+    background-color: white;
+    color: black;
   }
   .dashboard-menu-item a{
     text-decoration: none;
@@ -79,7 +90,7 @@ body {
   
   .dashboard-card {
     padding: 20px;
-    background-color: #f2f2f2;
+    background-color: #83a2a3;
     border-radius: 4px;
   }
   
@@ -94,3 +105,16 @@ body {
     line-height: 1.5;
   }
   
+  .bottom-paragraph{
+    position: relative;
+    height: 200px;
+    
+  }
+  .bottom-paragraph p{
+    color: #666; 
+  font-size: 14px; 
+  position: absolute;
+  bottom: 0;
+  /* left: 50%;
+  transform: translateX(-50%); */
+  }

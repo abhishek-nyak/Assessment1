@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Setting</title>
+</head>
+<body>
+    <body>
+        <div class="navigation">
+          <ul>
+            <li><a href="/">Go Home</a></li>
+            <li><a href="/change-password">Change Password</a></li>
+            <li><a href="/change-name">Change Name</a></li>
+            <li><a href="/delete-account">Delete Account</a></li>
+          </ul>
+        </div>
+
+
+        <div class="content">
+            <!-- Change Name form -->
+            <h1>Change Name</h1>
+            <form action="/change-name" method="POST">
+              <div>
+                <label for="newName">New Name</label>
+                <input type="text" id="newName" name="newName" required>
+              </div>
+              <div>
+                <button type="submit">Change</button>
+              </div>
+            </form>
+          </div>
+        
+      </body>
+</body>
+</html>
+
+
