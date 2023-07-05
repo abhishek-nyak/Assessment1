@@ -12,6 +12,8 @@
       <li><a href="/accountSetting">Change Password</a></li>
       <li><a href="/accountSetting/change-name">Change Name</a></li>
       <li><a href="/accountSetting/delete-account" class="active-nav">Delete Account</a></li>
+      <li><a href="/accountSetting/address" >Address</a></li>
+
     </ul>
   </div>
 
@@ -19,6 +21,10 @@
     <!-- Delete Account form -->
     <h1>Delete Account</h1>
     <form action="/delete-account" method="POST">
+      <div>
+        <label for="Password">Password</label>
+        <input type="password" id="password" name="password" required>
+      </div>
       <div>
         <label>
           <input type="checkbox" name="aware" required>

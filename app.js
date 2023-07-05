@@ -66,6 +66,13 @@ app.get('/logout', (req, res) => {
 
 
 
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+  next();
+});
+
+
+
 // Start the server
 app.listen(3000, () => {
   console.log('Server started on port 3000');

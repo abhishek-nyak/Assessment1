@@ -1,3 +1,4 @@
+//To control the resetlink form.
 
 const User = require('../models/User');
 const validate =require('../utils/validate');
